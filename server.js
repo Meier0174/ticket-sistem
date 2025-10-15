@@ -1,5 +1,7 @@
 import express from "express";
 import dotenv from "dotenv";
+import path from "path";
+import { fileURLToPath } from "url";
 import { sendEmail } from "./mailgun.js";
 
 dotenv.config({ path: "./.env" });
@@ -9,22 +11,18 @@ app.use(express.json());
 
 const PORT = process.env.PORT || 3001;
 
-app.use(express.static("public"));
-
-import path from "path";
-import { fileURLToPath } from "url";
-
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
+// 🔹 ВАЖЛИВО: показуємо статичні файли з папки public
 app.use(express.static(path.join(__dirname, "public")));
 
-// Головна сторінка
+// 🔹 Головна сторінка — показує index.html
 app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "public", "index.html"));
 });
 
-// Основний маршрут для відправки листів
+// 🔹 Маршрут для надсилання email
 app.post("/send-email", async (req, res) => {
   try {
     const { to, subject, text } = req.body;
