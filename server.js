@@ -11,9 +11,17 @@ const PORT = process.env.PORT || 3001;
 
 app.use(express.static("public"));
 
-// Тестовий маршрут
+import path from "path";
+import { fileURLToPath } from "url";
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+app.use(express.static(path.join(__dirname, "public")));
+
+// Головна сторінка
 app.get("/", (req, res) => {
-  res.send("✅ Test server running at http://localhost:" + PORT);
+  res.sendFile(path.join(__dirname, "public", "index.html"));
 });
 
 // Основний маршрут для відправки листів
