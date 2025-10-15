@@ -1,60 +1,35 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Test Email Sender</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-    }
-    form {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      width: 300px;
-    }
-    input, button {
-      padding: 10px;
-      font-size: 16px;
-    }
-  </style>
-</head>
-<body>
-  <h2>Send Test Email</h2>
-  <form id="emailForm">
-    <input type="email" id="to" placeholder="Enter recipient email" required />
-    <button type="submit">Send Email</button>
-  </form>
-
-  <p id="result"></p>
-
-  <script>
-    document.getElementById("emailForm").addEventListener("submit", async (e) => {
-      e.preventDefault();
-      const to = document.getElementById("to").value;
-      const result = document.getElementById("result");
-
-      result.textContent = "⏳ Sending...";
-
-      const response = await fetch("/send-email", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          to,
-          subject: "Test message from CrabSlots",
-          text: "Hello! This is a test message to verify delivery."
-        }),
-      });
-
-      const data = await response.json();
-      result.textContent = data.success ? "✅ Email sent successfully!" : "❌ Error sending email.";
-    });
-  </script>
-</body>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Send Test Email</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+      *{box-sizing:border-box;font-family:"Inter",sans-serif}
+      body{background:linear-gradient(135deg,#f3f4f6,#dfe9f3);height:100vh;display:flex;align-items:center;justify-content:center;margin:0}
+      .container{background:#fff;padding:36px 40px;border-radius:14px;box-shadow:0 8px 30px rgba(0,0,0,.08);max-width:420px;width:100%;text-align:center}
+      h2{margin:0 0 8px;font-weight:600}
+      p{margin:0 0 18px;color:#555;font-size:14px}
+      input{width:100%;padding:12px 14px;border-radius:10px;border:1px solid #d1d5db;margin-bottom:14px;font-size:15px;outline:none}
+      input:focus{border-color:#2563eb;box-shadow:0 0 0 3px rgba(37,99,235,.08)}
+      button{width:100%;padding:12px;border-radius:10px;border:none;background:#2563eb;color:#fff;font-weight:600;cursor:pointer}
+      button:disabled{opacity:.6;cursor:not-allowed}
+      .loader{display:none;margin:12px auto;border:4px solid #eee;border-top:4px solid #2563eb;border-radius:50%;width:26px;height:26px;animation:spin 1s linear infinite}
+      @keyframes spin{to{transform:rotate(360deg)}}
+      .message{margin-top:12px;font-size:15px;display:none}
+      .message.success{color:#16a34a}
+      .message.error{color:#dc2626}
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h2>🔔 🦀 КРАБ ЖИВИ 🦀</h2>
+      <input id="email" type="email" placeholder="Enter your email" required />
+      <button id="sendBtn">SEND</button>
+      <div class="loader" id="loader"></div>
+      <div class="message" id="message"></div>
+    </div>
+    <script src="script.js"></script>
+  </body>
 </html>
