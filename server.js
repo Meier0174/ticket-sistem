@@ -9,20 +9,19 @@ dotenv.config({ path: "./.env" });
 const app = express();
 app.use(express.json());
 
-const PORT = process.env.PORT || 3001;
-
+// --- Шляхи ---
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-// 🔹 ВАЖЛИВО: показуємо статичні файли з папки public
+// --- Віддавати всі файли з public ---
 app.use(express.static(path.join(__dirname, "public")));
 
-// 🔹 Головна сторінка — показує index.html
+// --- Головна сторінка ---
 app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "public", "index.html"));
 });
 
-// 🔹 Маршрут для надсилання email
+// --- Основний маршрут для відправки листів ---
 app.post("/send-email", async (req, res) => {
   try {
     const { to, subject, text } = req.body;
@@ -34,6 +33,13 @@ app.post("/send-email", async (req, res) => {
   }
 });
 
-app.listen(PORT, () => {
-  console.log(`🚀 Server running on http://localhost:${PORT}`);
+// --- 404: якщо користувач заходить на неіснуючий маршрут ---
+app.use((req, res) => {
+  res.status(404).sendFile(path.join(__dirname, "public", "index.html"));
+});
+
+// --- Запуск сервера ---
+const PORT = process.env.PORT || 3001;
+app.listen(PORT, "0.0.0.0", () => {
+  console.log(`🚀 Server running on port ${PORT}`);
 });
