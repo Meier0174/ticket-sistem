@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Test Email Sender</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      width: 300px;
+    }
+    input, button {
+      padding: 10px;
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+  <h2>Send Test Email</h2>
+  <form id="emailForm">
+    <input type="email" id="to" placeholder="Enter recipient email" required />
+    <button type="submit">Send Email</button>
+  </form>
+
+  <p id="result"></p>
+
+  <script>
+    document.getElementById("emailForm").addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const to = document.getElementById("to").value;
+      const result = document.getElementById("result");
+
+      result.textContent = "⏳ Sending...";
+
+      const response = await fetch("/send-email", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          to,
+          subject: "Test message from CrabSlots",
+          text: "Hello! This is a test message to verify delivery."
+        }),
+      });
+
+      const data = await response.json();
+      result.textContent = data.success ? "✅ Email sent successfully!" : "❌ Error sending email.";
+    });
+  </script>
+</body>
+</html>

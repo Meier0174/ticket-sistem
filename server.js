@@ -9,6 +9,8 @@ app.use(express.json());
 
 const PORT = process.env.PORT || 3001;
 
+app.use(express.static("public"));
+
 // Тестовий маршрут
 app.get("/", (req, res) => {
   res.send("✅ Test server running at http://localhost:" + PORT);
