@@ -9,23 +9,24 @@ dotenv.config({ path: "./.env" });
 const app = express();
 app.use(express.json());
 
-// --- Шляхи ---
+const PORT = process.env.PORT || 3001;
+
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-// --- Віддавати всі файли з public ---
+// 🔹 ВАЖЛИВО: показуємо статичні файли з папки public
 app.use(express.static(path.join(__dirname, "public")));
 
-// --- Головна сторінка ---
+// 🔹 Головна сторінка — показує index.html
 app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "public", "index.html"));
 });
 
-// --- Основний маршрут для відправки листів ---
+// 🔹 Маршрут для надсилання email
 app.post("/send-email", async (req, res) => {
   try {
-    const { to, subject, text } = req.body;
-    const result = await sendEmail(to, subject, text);
+    const { to, subject, text, html } = req.body;
+    const result = await sendEmail(to, subject, text, html);
     res.json({ success: true, data: result });
   } catch (error) {
     console.error("❌ Mailgun error:", error.message);
@@ -33,13 +34,6 @@ app.post("/send-email", async (req, res) => {
   }
 });
 
-// --- 404: якщо користувач заходить на неіснуючий маршрут ---
-app.use((req, res) => {
-  res.status(404).sendFile(path.join(__dirname, "public", "index.html"));
-});
-
-// --- Запуск сервера ---
-const PORT = process.env.PORT || 3001;
-app.listen(PORT, "0.0.0.0", () => {
-  console.log(`🚀 Server running on port ${PORT}`);
+app.listen(PORT, () => {
+  console.log(`🚀 Server running on http://localhost:${PORT}`);
 });

@@ -22,7 +22,9 @@ sendBtn.addEventListener("click", async () => {
       body: JSON.stringify({
         to: email,
         subject: "Crabslots: Ihr persönliches Angebot wartet",
-        html:`<p>Guten Tag,</p>
+        text: "text: "Falls HTML nicht angezeigt wird — bitte öffnen Sie diesen Link: https://crabslots.com/",
+        html:`
+            <p>Guten Tag,</p>
 
             <p>Mein Name ist Sophia Hart vom Crabslots VIP-Betreuungsteam.</p>
 
@@ -49,7 +51,8 @@ sendBtn.addEventListener("click", async () => {
 
             <p>Sophia Hart</p>
             <p>VIP Betreuung,</p>
-            <p>Crabslots.com</p>`
+            <p>Crabslots.com</p>
+            `
       }),
     });
 
