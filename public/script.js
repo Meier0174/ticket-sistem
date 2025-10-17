@@ -22,7 +22,7 @@ sendBtn.addEventListener("click", async () => {
       body: JSON.stringify({
         to: email,
         subject: "Crabslots: Ihr persönliches Angebot wartet",
-        text: "text: "Falls HTML nicht angezeigt wird — bitte öffnen Sie diesen Link: https://crabslots.com/",
+        text: "text: Falls HTML nicht angezeigt wird — bitte öffnen Sie diesen Link: https://crabslots.com/",
         html:`
             <p>Guten Tag,</p>
 
