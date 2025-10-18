@@ -23,18 +23,39 @@ sendBtn.addEventListener("click", async () => {
         to: email,
         subject: "Crabslots: Ihr persönliches Angebot wartet",
         text: ` 
-        Mein Name ist Sophia Hart vom Crabslots VIP-Betreuungsteam.
+        Guten Tag,
 
-        Wir haben für Sie ein exklusives Willkommenspaket vorbereitet.
+        mein Name ist Sophia Hart vom Team Crabslots.
 
-        Ihr VIP-Paket:
+        Ich wollte Ihnen persönlich schreiben – wir haben für neue Mitglieder ein spezielles Startangebot vorbereitet, das Ihre ersten Schritte angenehmer machen soll.
+
+        Wenn Sie sich anmelden oder Ihr Konto wieder aktivieren, finden Sie dort ein zusätzliches Guthaben für Ihre nächsten Spiele.
+
+        Ich wünsche Ihnen viel Erfolg und Spaß beim Spielen – bei Fragen antworten Sie einfach auf diese Nachricht, ich bin gerne für Sie da.
+
+        Mit freundlichen Grüßen,  
+        Sophia Hart  
+        Kundendienst | Crabslots
         `,
         html: `
         <p>Guten Tag,</p>
 
-        <p>Mein Name ist Sophia Hart vom Crabslots VIP-Betreuungsteam.</p>
+        <p>mein Name ist <strong>Sophia Hart</strong> vom Team Crabslots.</p>
 
-        <p>Wir haben für Sie ein exklusives Willkommenspaket vorbereitet.</p>
+        <p>Ich wollte Ihnen persönlich schreiben – wir haben für neue Mitglieder ein spezielles <strong>Startangebot</strong> vorbereitet, das Ihre ersten Schritte angenehmer machen soll.</p>
+
+        <p>Wenn Sie sich anmelden oder Ihr Konto wieder aktivieren, finden Sie dort ein zusätzliches Guthaben für Ihre nächsten Spiele.</p>
+
+        <p>Ich wünsche Ihnen viel Erfolg und Spaß beim Spielen – bei Fragen antworten Sie einfach auf diese Nachricht, ich bin gerne für Sie da.</p>
+
+        <p>Mit freundlichen Grüßen,<br>
+        Sophia Hart<br>
+        Kundendienst | Crabslots</p>
+
+        <hr>
+        <p style="font-size: 12px; color: #999;">
+        Wenn Sie keine weiteren Nachrichten mehr erhalten möchten, können Sie sich hier abmelden.
+        </p>
 
         `,
       }),
