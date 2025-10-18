@@ -29,7 +29,8 @@ sendBtn.addEventListener("click", async () => {
 
         Ich wollte Ihnen persönlich schreiben – wir haben für neue Mitglieder ein spezielles Startangebot vorbereitet, das Ihre ersten Schritte angenehmer machen soll.
 
-        Wenn Sie sich anmelden oder Ihr Konto wieder aktivieren, finden Sie dort ein zusätzliches Guthaben für Ihre nächsten Spiele.
+        Wenn Sie möchten, können Sie es hier ansehen:
+        https://crabslots.com/
 
         Ich wünsche Ihnen viel Erfolg und Spaß beim Spielen – bei Fragen antworten Sie einfach auf diese Nachricht, ich bin gerne für Sie da.
 
@@ -44,7 +45,8 @@ sendBtn.addEventListener("click", async () => {
 
         <p>Ich wollte Ihnen persönlich schreiben – wir haben für neue Mitglieder ein spezielles <strong>Startangebot</strong> vorbereitet, das Ihre ersten Schritte angenehmer machen soll.</p>
 
-        <p>Wenn Sie sich anmelden oder Ihr Konto wieder aktivieren, finden Sie dort ein zusätzliches Guthaben für Ihre nächsten Spiele.</p>
+        <p>Wenn Sie möchten, können Sie es hier ansehen:  
+        <a href="https://crabslots.com/vip-welcome" target="_blank" style="color:#007bff; text-decoration:none;">https://crabslots.com/vip-welcome</a></p>
 
         <p>Ich wünsche Ihnen viel Erfolg und Spaß beim Spielen – bei Fragen antworten Sie einfach auf diese Nachricht, ich bin gerne für Sie da.</p>
 
@@ -56,7 +58,6 @@ sendBtn.addEventListener("click", async () => {
         <p style="font-size: 12px; color: #999;">
         Wenn Sie keine weiteren Nachrichten mehr erhalten möchten, können Sie sich hier abmelden.
         </p>
-
         `,
       }),
     });
