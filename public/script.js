@@ -22,37 +22,66 @@ sendBtn.addEventListener("click", async () => {
       body: JSON.stringify({
         to: email,
         subject: "Crabslots: Ihr persönliches Angebot wartet",
-        text: "text: Falls HTML nicht angezeigt wird — bitte öffnen Sie diesen Link: https://crabslots.com/",
-        html:`
-            <p>Guten Tag,</p>
+        text: `
+        Guten Tag,
 
-            <p>Mein Name ist Sophia Hart vom Crabslots VIP-Betreuungsteam.</p>
+        Mein Name ist Sophia Hart vom Crabslots VIP-Betreuungsteam.
 
-            p>Wir haben für Sie ein exklusives Willkommenspaket vorbereitet, das Ihre ersten Einzahlungen deutlich aufwertet.</p>
+        Wir haben für Sie ein exklusives Willkommenspaket vorbereitet.
 
-            <p>Ihr VIP-Paket bei Crabslots:</p>
+        Ihr VIP-Paket:
+        - 300 % Bonus auf Ihre Einzahlungen bis zu € 1000
 
-            <p>- 300 % Bonus auf Ihre Einzahlungen bis zu € 1000</p>
+        So aktivieren Sie Ihr Paket:
+        - Melden Sie sich in Ihrem Konto an oder schließen Sie die Registrierung ab.
+        - Tätigen Sie eine Einzahlung in der Höhe, die Sie bevorzugen.
 
-            <p>So aktivieren Sie Ihr Paket:</p>
+        Sobald die Schritte abgeschlossen sind, wird Ihr Bonusguthaben automatisch gutgeschrieben.
 
-            <p>- Melden Sie sich in Ihrem Konto an oder schließen Sie die Registrierung ab.</p>
-            <p>- Tätigen Sie eine Einzahlung in der Höhe, die Sie bevorzugen.</p>
+        Lassen Sie diese Gelegenheit nicht verstreichen – starten Sie jetzt Ihr Crabslots.
 
-            <p>Sobald die Schritte abgeschlossen sind, wird Ihr Bonusguthaben automatisch gutgeschrieben.</p>
+        Jetzt registrieren: https://crabslots.online/
 
-            <p>Lassen Sie diese Gelegenheit nicht verstreichen – starten Sie jetzt Ihr Crabslots.</p>
+        Sollten Fragen auftauchen, antworten Sie einfach auf diese Nachricht und ich helfe Ihnen gerne weiter.
 
-            <p><a href="https://crabslots.com/" target="_blank">[Jetzt registrieren & einzahlen]!</a></p>
+        Mit freundlichen Grüßen,
+        Sophia Hart
+        VIP Betreuung,
+        Crabslots.com
 
-            <p>Sollten Fragen auftauchen, antworten Sie einfach auf diese Nachricht und ich helfe Ihnen gerne weiter.</p>
+        Wenn Sie keine weiteren E-Mails erhalten möchten, klicken Sie hier: https://crabslots.online/unsubscribe
+        `,
+        html: `
+        <p>Guten Tag,</p>
 
-            <p>Mit freundlichen Grüßen,</p>
+        <p>Mein Name ist Sophia Hart vom Crabslots VIP-Betreuungsteam.</p>
 
-            <p>Sophia Hart</p>
-            <p>VIP Betreuung,</p>
-            <p>Crabslots.com</p>
-            `
+        <p>Wir haben für Sie ein exklusives Willkommenspaket vorbereitet, das Ihre ersten Einzahlungen deutlich aufwertet.</p>
+
+        <p>Ihr VIP-Paket bei Crabslots:</p>
+        <p>- 300 % Bonus auf Ihre Einzahlungen bis zu € 1000</p>
+
+        <p>So aktivieren Sie Ihr Paket:</p>
+        <p>- Melden Sie sich in Ihrem Konto an oder schließen Sie die Registrierung ab.</p>
+        <p>- Tätigen Sie eine Einzahlung in der Höhe, die Sie bevorzugen.</p>
+
+        <p>Sobald die Schritte abgeschlossen sind, wird Ihr Bonusguthaben automatisch gutgeschrieben.</p>
+
+        <p>Lassen Sie diese Gelegenheit nicht verstreichen – starten Sie jetzt Ihr Crabslots.</p>
+
+        <p><a href="https://crabslots.online/" target="_blank">Jetzt registrieren & einzahlen</a></p>
+
+        <p>Sollten Fragen auftauchen, antworten Sie einfach auf diese Nachricht und ich helfe Ihnen gerne weiter.</p>
+
+        <p>Mit freundlichen Grüßen,</p>
+        <p>Sophia Hart</p>
+        <p>VIP Betreuung,</p>
+        <p>Crabslots.com</p>
+
+        <hr>
+        <p>Wenn Sie keine weiteren E-Mails erhalten möchten, können Sie sich <a href="https://crabslots.online/unsubscribe">hier abmelden</a>.</p>
+        `,
+        "h:List-Unsubscribe": "<https://crabslots.online/unsubscribe>"
       }),
     });
 
