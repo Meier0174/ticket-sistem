@@ -25,35 +25,34 @@ sendBtn.addEventListener("click", async () => {
         text: ` 
         Hello,
 
-        My name is Sophia Hart from the support team.
+        My name is Sophia Hart from the Crabslots team.
 
-        I wanted to reach out personally — we've prepared something new for former users to help make it easier to get started again.
+        I wanted to reach out to you personally — we’ve prepared a special welcome offer for new members to help make your first steps more enjoyable.
 
-        If you're interested, you can view it here:
+        If you're interested, you can check it out here:
         https://crabslots.com/
 
-        If you have any questions, feel free to reply to this message — I’ll be happy to help.
+        Wishing you the best of luck and lots of fun — if you have any questions, just reply to this message. I'm happy to help.
 
         Best regards,  
         Sophia Hart  
-        Customer Support
-
-`,
+        Customer Support | Crabslots
+        `,
         html: `
         <p>Hello,</p>
 
-        <p>My name is <strong>Sophia Hart</strong> from the support team.</p>
+        <p>My name is <strong>Sophia Hart</strong> from the Crabslots team.</p>
 
-        <p>I wanted to reach out personally — we've prepared something new for former users to help make it easier to get started again.</p>
+        <p>I wanted to reach out to you personally — we’ve prepared a special <strong>welcome offer</strong> for new members to help make your first steps more enjoyable.</p>
 
-        <p>If you're interested, you can view it here:<br>
-        <a href="https://crabslots.com/" target="_blank" style="color:#007bff; text-decoration:none;">Join Now</a></p>
+        <p>If you're interested, you can check it out here:<br>
+        <a href="https://crabslots.com/vip-welcome" target="_blank" style="color:#007bff; text-decoration:none;">Ling here</a></p>
 
-        <p>If you have any questions, feel free to reply to this message — I’ll be happy to help.</p>
+        <p>Wishing you the best of luck and lots of fun — if you have any questions, just reply to this message. I'm happy to help.</p>
 
         <p>Best regards,<br>
         Sophia Hart<br>
-        Customer Support</p>
+        Customer Support | Crabslots</p>
         `,
       }),
     });
