@@ -1,11 +1,25 @@
 // logger.js
-import winston from "winston";
+import fs from "fs";
 import path from "path";
+import winston from "winston";
 import { fileURLToPath } from "url";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
+// Шлях до папки логів
+const logDir = path.join(__dirname, "logs");
+const logFile = path.join(logDir, "sent.log");
+
+// Якщо нема — створюємо папку і файл
+if (!fs.existsSync(logDir)) {
+  fs.mkdirSync(logDir);
+}
+if (!fs.existsSync(logFile)) {
+  fs.writeFileSync(logFile, "", "utf8");
+}
+
+// Конфігурація логера
 const logger = winston.createLogger({
   level: "info",
   format: winston.format.combine(
@@ -16,9 +30,7 @@ const logger = winston.createLogger({
     )
   ),
   transports: [
-    new winston.transports.File({
-      filename: path.join(__dirname, "logs", "sent.log"),
-    }),
+    new winston.transports.File({ filename: logFile }),
   ],
 });
 

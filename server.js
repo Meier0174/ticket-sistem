@@ -4,6 +4,7 @@ import path from "path";
 import { fileURLToPath } from "url";
 import rateLimit from "express-rate-limit";
 import emailRoutes from "./routes/emailRoutes.js";
+import adminRoutes from "./routes/adminRoutes.js";
 
 dotenv.config({ path: "./.env" });
 
@@ -28,6 +29,7 @@ const __dirname = path.dirname(__filename);
 
 app.use(express.static(path.join(__dirname, "public")));
 app.use("/", emailRoutes);
+app.use("/", adminRoutes);
 
 // === Health Check ===
 app.get("/status", (req, res) => {
