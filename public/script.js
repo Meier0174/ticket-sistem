@@ -23,7 +23,7 @@ sendBtn.addEventListener("click", async () => {
         to: email,
         subject: "Crabslots: Ihr persönliches Angebot wartet",
         text: ` 
-        Hello,
+        Hello S,
 
         My name is Sophia Hart from the Crabslots team.
 
@@ -39,7 +39,7 @@ sendBtn.addEventListener("click", async () => {
         Customer Support | Crabslots
         `,
         html: `
-        <p>Hello,</p>
+        <p>Hello, S</p>
 
         <p>My name is <strong>Sophia Hart</strong> from the Crabslots team.</p>
 
