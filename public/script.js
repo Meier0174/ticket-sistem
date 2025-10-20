@@ -24,38 +24,38 @@ document.addEventListener("DOMContentLoaded", () => {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           to: email,
-          subject: "Crabslots: Ihr persönliches Angebot wartet",
+          subject: "Ihr persönliches Angebot wartet",
           text: ` 
-        Hello ${name},
+        Guten Tag ${name},
 
-        My name is Sophia Hart from the Crabslots team.
+        Mein Name ist Sophia Hart vom CrabSlots-Team.
 
-        I wanted to reach out to you personally — we’ve prepared a special welcome offer for new members to help make your first steps more enjoyable.
+        Ich moechte Ihnen persönlich schreiben. Wir haben ein besonderes Willkommensangebot für neue Mitglieder vorbereitet, um Ihnen den Einstieg so angenehm wie möglich zu machen.
 
-        If you're interested, you can check it out here:
+        Wenn Sie möchten, können Sie es sich hier ansehen:
         https://crabslots.com/
 
-        Wishing you the best of luck and lots of fun — if you have any questions, just reply to this message. I'm happy to help.
+        Ich wünsche Ihnen viel Glück und Freude. Wenn Sie Fragen haben, antworten Sie einfach auf diese Nachricht. Ich helfe Ihnen gerne.
 
-        Best regards,  
-        Sophia Hart  
-        Customer Support | Crabslots
+        Mit freundlichen Grüßen,
+        Sophia Hart
+        VIP | Crabslots
         `,
         html: `
-        <p>Hello ${name}, </p>
+        <p>Guten Tag <strong>${name}</strong>, </p>
 
-        <p>My name is <strong>Sophia Hart</strong> from the Crabslots team.</p>
+        <p>Mein Name ist Sophia Hart vom <strong>CrabSlots-Team</strong>.</p>
 
-        <p>I wanted to reach out to you personally — we’ve prepared a special <strong>welcome offer</strong> for new members to help make your first steps more enjoyable.</p>
+        <p>Ich moechte Ihnen persönlich schreiben. Wir haben ein besonderes Willkommensangebot für neue Mitglieder vorbereitet, um Ihnen den Einstieg so angenehm wie möglich zu machen.</p>
 
-        <p>If you're interested, you can check it out here:<br>
-        <a href="https://crabslots.com/vip-welcome" target="_blank" style="color:#007bff; text-decoration:none;">Ling here</a></p>
+        <p>Wenn Sie möchten, können Sie es sich hier ansehen:<br>
+        <a href="https://go.crabslots.partners/visit/?bta=35185&nci=5344&utm_campaign=m" target="_blank" style="color:#007bff; text-decoration:none;">Mehr Erfahren</a></p>
 
-        <p>Wishing you the best of luck and lots of fun — if you have any questions, just reply to this message. I'm happy to help.</p>
+        <p>Ich wünsche Ihnen viel Glück und Freude. Wenn Sie Fragen haben, antworten Sie einfach auf diese Nachricht. Ich helfe Ihnen gerne.</p>
 
-        <p>Best regards,<br>
+        <p>Mit freundlichen Grüßen,<br>
         Sophia Hart<br>
-        Customer Support | Crabslots</p>
+        VIP | Crabslots</p>
         `,
       }),
     });

@@ -31,7 +31,7 @@ export async function sendEmail(to, subject, text, html) {
   const url = `${BASE_URL}/v3/${DOMAIN}/messages`;
 
   const params = new URLSearchParams();
-  params.append("from", `Crabslots Support <Support@${DOMAIN}>`);
+  params.append("from", `Crabslots <VIP@${DOMAIN}>`);
   params.append("to", to);
   params.append("subject", finalSubject);
   if (html) params.append("html", html);
