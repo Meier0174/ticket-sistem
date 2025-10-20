@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", () => {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           to: email,
-          subject: "Ihr persönliches Angebot wartet",
+          subject: "Your personal offer is ready",
           text: ` 
           Hello ${name},
 
