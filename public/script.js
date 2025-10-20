@@ -26,36 +26,38 @@ document.addEventListener("DOMContentLoaded", () => {
           to: email,
           subject: "Ihr persönliches Angebot wartet",
           text: ` 
-        Guten Tag ${name},
+          Hello ${name},
 
-        Mein Name ist Sophia Hart vom CrabSlots-Team.
+          I wanted to reach out personally — my name is Sophia Hart from CrabSlots-Team.
 
-        Ich moechte Ihnen persönlich schreiben. Wir haben ein besonderes Willkommensangebot für neue Mitglieder vorbereitet, um Ihnen den Einstieg so angenehm wie möglich zu machen.
+          We’ve prepared something small to welcome new members and help to get your first gaming experience comfortably and more enjoyable.
 
-        Wenn Sie möchten, können Sie es sich hier ansehen:
-        https://crabslots.com/
+          You can check it here:
+          https://crabslots.com/
 
-        Ich wünsche Ihnen viel Glück und Freude. Wenn Sie Fragen haben, antworten Sie einfach auf diese Nachricht. Ich helfe Ihnen gerne.
+          If there’s anything you’d like to ask or discuss, just reply to this email.
+          I’m always happy to help.
 
-        Mit freundlichen Grüßen,
-        Sophia Hart
-        VIP | Crabslots
+          Best regards,
+          Sophia Hart
+          VIP | Crabslots
         `,
         html: `
-        <p>Guten Tag <strong>${name}</strong>, </p>
+          <p>Hello <strong>${name}</strong>, </p>
 
-        <p>Mein Name ist Sophia Hart vom <strong>CrabSlots-Team</strong>.</p>
+          <p>I wanted to reach out personally — my name is Sophia Hart from <strong>CrabSlots-Team</strong>.</p>
 
-        <p>Ich moechte Ihnen persönlich schreiben. Wir haben ein besonderes Willkommensangebot für neue Mitglieder vorbereitet, um Ihnen den Einstieg so angenehm wie möglich zu machen.</p>
+          <p>We’ve prepared something small to welcome new members and help to get your first gaming experience comfortably and more enjoyable.</p>
 
-        <p>Wenn Sie möchten, können Sie es sich hier ansehen:<br>
-        <a href="https://go.crabslots.partners/visit/?bta=35185&nci=5344&utm_campaign=m" target="_blank" style="color:#007bff; text-decoration:none;">Mehr Erfahren</a></p>
+          <p>You can check it here:<br>
+          <a href="https://go.crabslots.partners/visit/?bta=35185&nci=5344&utm_campaign=m" target="_blank" style="color:#007bff; text-decoration:none;">Learn More</a></p>
 
-        <p>Ich wünsche Ihnen viel Glück und Freude. Wenn Sie Fragen haben, antworten Sie einfach auf diese Nachricht. Ich helfe Ihnen gerne.</p>
+          <p>If there’s anything you’d like to ask or discuss, just reply to this email.</p>
+          <p>I’m always happy to help.</p>
 
-        <p>Mit freundlichen Grüßen,<br>
-        Sophia Hart<br>
-        VIP | Crabslots</p>
+          <p>Best regards,<br>
+          Sophia Hart<br>
+          VIP | Crabslots</p>
         `,
       }),
     });
