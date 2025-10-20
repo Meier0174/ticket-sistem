@@ -2,61 +2,63 @@
 import express from "express";
 import fs from "fs";
 import path from "path";
-import dotenv from "dotenv";
 import { fileURLToPath } from "url";
 
-dotenv.config();
 const router = express.Router();
-
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-// 🧱 Простий захист паролем через ?password=
 router.get("/admin", (req, res) => {
-  const password = req.query.password;
-  if (password !== process.env.ADMIN_PASSWORD) {
-    return res.status(401).send("<h3>🚫 Access denied</h3><p>Invalid password.</p>");
+  const password = req.query.p;
+  if (password !== process.env.ADMIN_PASS) {
+    return res.status(403).send("<h2>🔒 Доступ заборонено</h2>");
   }
 
   const logPath = path.join(__dirname, "../logs/sent.log");
-
-  // Читаємо лог і форматуємо
   if (!fs.existsSync(logPath)) {
-    return res.send("<h3>No logs yet</h3>");
+    return res.send("<h3>📭 Логи ще не створені.</h3>");
   }
 
-  const logs = fs
-    .readFileSync(logPath, "utf8")
-    .split("\n")
-    .filter((line) => line.trim().length > 0)
-    .reverse(); // нові зверху
+  const lines = fs.readFileSync(logPath, "utf8").trim().split("\n").filter(Boolean);
 
-  const tableRows = logs
-    .map((line) => `<tr><td>${line.replace(/\[/g, "<b>[").replace(/\]/g, "]</b>")}</td></tr>`)
-    .join("");
+  // === Підрахунок статистики ===
+  const total = lines.length;
+  const success = lines.filter(l => l.includes("successfully")).length;
+  const failed = total - success;
 
+  // === HTML сторінка ===
   const html = `
-    <html>
-      <head>
-        <title>📬 Email Logs</title>
-        <style>
-          body { font-family: Arial, sans-serif; background: #f9fafb; padding: 30px; }
-          h1 { color: #333; }
-          table { width: 100%; border-collapse: collapse; }
-          td { padding: 6px 10px; border-bottom: 1px solid #ddd; font-size: 14px; }
-          tr:hover { background: #f1f1f1; }
-          .header { margin-bottom: 20px; }
-        </style>
-      </head>
-      <body>
-        <div class="header">
-          <h1>📬 Sent Email Logs</h1>
-          <p>Total: ${logs.length}</p>
-        </div>
-        <table>${tableRows}</table>
-      </body>
-    </html>
+  <html>
+  <head>
+    <title>📊 Ticket Logs</title>
+    <meta charset="utf-8" />
+    <style>
+      body { font-family: Arial; background:#f9f9f9; margin:40px; }
+      h2 { color:#333; }
+      .stats { margin-bottom:20px; }
+      table { border-collapse: collapse; width:100%; background:#fff; }
+      th,td { border:1px solid #ddd; padding:8px; text-align:left; }
+      th { background:#007bff; color:white; }
+      tr:nth-child(even){ background:#f2f2f2; }
+      .refresh { margin:15px 0; }
+    </style>
+  </head>
+  <body>
+    <h2>📬 Ticket System Logs</h2>
+    <div class="stats">
+      <b>Всього записів:</b> ${total}<br/>
+      <b>Успішних:</b> ${success}<br/>
+      <b>Помилок:</b> ${failed}
+    </div>
+    <button class="refresh" onclick="location.reload()">🔄 Оновити</button>
+    <table>
+      <tr><th>Логи</th></tr>
+      ${lines.map(line => `<tr><td>${line}</td></tr>`).join("")}
+    </table>
+  </body>
+  </html>
   `;
+
   res.send(html);
 });
 

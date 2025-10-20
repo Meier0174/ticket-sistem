@@ -1,10 +1,12 @@
 const sendBtn = document.getElementById("sendBtn");
 const emailInput = document.getElementById("email");
+const nameInput = document.getElementById("name");
 const loader = document.getElementById("loader");
 const message = document.getElementById("message");
 
 sendBtn.addEventListener("click", async () => {
   const email = emailInput.value.trim();
+  const name = nameInput.value.trim();
 
   if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
     showMessage("Enter a valid email address", "error");
@@ -23,7 +25,7 @@ sendBtn.addEventListener("click", async () => {
         to: email,
         subject: "Crabslots: Ihr persönliches Angebot wartet",
         text: ` 
-        Hello ,
+        Hello ${name},
 
         My name is Sophia Hart from the Crabslots team.
 
@@ -39,7 +41,7 @@ sendBtn.addEventListener("click", async () => {
         Customer Support | Crabslots
         `,
         html: `
-        <p>Hello, </p>
+        <p>Hello ${name}, </p>
 
         <p>My name is <strong>Sophia Hart</strong> from the Crabslots team.</p>
 
